@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block page_title %}
+    Издательства
+{% endblock %}
+
+{% block content %}
+<div class="container">    
+
+    {% for item in publishers %}
+        <ul class="list-group">
+            <li class="list-group-item">
+                {{ item.pub_name }}
+                <ul class="list-group">
+                    {% for book in publisher.books.all %}
+                        <li class="list-group-item"> 
+                            {{ book.title }}
+                        </li>
+                    {% endfor %}
+                </ul>
+            </li>
+        </ul>
+    {% endfor %}
+
+</div>
+{% endblock %}
