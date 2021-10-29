@@ -1,20 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Список авторов</title>
-    </head>
-    <body>
-        <ul>
-            {% for author in object_list %}
-                <li>{{ author.full_name }}</li>
-            {% endfor %}
-        </ul>
-    </body>
-
-
-
-</html>
-
-
-
+{% extends "base.html" %}
+{% block page_title %}
+    Список авторов
+{% endblock %}
+  
+{% block content %} 
+    <ul>
+        {% for author in object_list %}
+            <li>{{ author.full_name }}</li>
+        {% endfor %}
+    </ul>  
+{% endblock %}
