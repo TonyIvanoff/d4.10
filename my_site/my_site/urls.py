@@ -16,11 +16,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from p_library import views
+from p_library.views import AuthorEdit, AuthorList
 
+
+app_name = 'p_library'
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index),
     path('book_increment/', views.book_increment),
     path('book_decrement/', views.book_decrement),
     path('publishers/', views.publishers),
+    path('author/create', AuthorEdit.as_view(), name='author_create'),  
+    path('authors', AuthorList.as_view(), name='author_list'),
 ]
